@@ -158,7 +158,7 @@ function CellInput({
     return (
       <input
         autoFocus
-        className="w-full rounded-lg border border-primary bg-background px-2 py-1.5 text-center text-sm font-mono focus:outline-none"
+        className="w-full rounded-xl border-2 border-ring bg-white/[0.09] px-2 py-2 text-center text-sm font-mono focus:outline-none"
         value={draft}
         inputMode={integer ? 'numeric' : 'decimal'}
         onChange={e => setDraft(e.target.value)}
@@ -176,15 +176,15 @@ function CellInput({
   }
 
   return (
-    <div className="flex items-center rounded-lg border border-border/60 bg-muted/30 overflow-hidden">
+    <div className="flex items-center rounded-xl border border-input bg-white/[0.06] overflow-hidden">
       <button
-        className="px-1.5 py-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+        className="px-2 py-2.5 text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-colors"
         onClick={() => onChange(Math.max(min, round(value - step)))}
       >
-        <Minus size={10} />
+        <Minus size={11} />
       </button>
       <button
-        className="flex-1 text-center text-sm font-mono py-1.5 hover:bg-muted/50 transition-colors"
+        className="flex-1 text-center text-sm font-mono py-2.5 font-medium hover:bg-white/[0.04] transition-colors"
         onClick={() => { setDraft(format(value)); setEditing(true) }}
       >
         {format(value)}
